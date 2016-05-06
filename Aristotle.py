@@ -14,6 +14,12 @@ class substance(object):
         return cf
     run = f(1)
 
+    def set(self ):
+        toReturn = xxx
+
+    def get(self, ):
+        toReturn
+
 s1 = substance()
 print
 print s1.run('name')
