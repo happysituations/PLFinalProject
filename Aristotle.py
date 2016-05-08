@@ -13,13 +13,7 @@ class substance(object):
                 return None
         return cf
     run = f(1)
-
-    def set(self ):
-        toReturn = xxx
-
-    def get(self, ):
-        toReturn
-
+'''
 s1 = substance()
 print
 print s1.run('name')
@@ -30,7 +24,7 @@ s1.run('$age')('66')
 print s1.run('age')
 print s1.run('dob')
 # print s1.data
-
+'''
 class animal(substance):
     #def run(self, a): return super(animal, self).run(a)
     def f(self):
@@ -45,10 +39,11 @@ class animal(substance):
                 return super(animal, self).run(d)
         return cf
     run = f(1)
-
+'''
 a1 = animal()
 print
 print "Now printing for a1"
 print a1.run('name')
 print a1.run('age')
 print a1.run('dob')
+'''

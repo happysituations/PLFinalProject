@@ -12,16 +12,15 @@ class MiniLisp(cmd.Cmd):     # See https://docs.python.org/2/library/cmd.html
         cmd.Cmd.__init__(self)
         self.prompt = "ml> "
         self.intro  = "Bienvenido a MiniLisp"
-
+    '''
     def p_initial(self, args):
-        ....
-        import substance from Aristotle
-        aaa = new substance
+        from Aristotle import substance
+        sub = substance()
 
-    def p_setx(self, args):
+    def p_set(self, args):
 
         return toReturn
-
+    '''
     def do_exit(self, args):
         """Exits from the console"""
         return -1
