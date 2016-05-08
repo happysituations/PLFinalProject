@@ -38,7 +38,7 @@ s_dept = (('ID','NAME','REGION_ID'),
           (44,'Operations',4),
           (45,'Operations',5),
           (50,'Administration',1))
-
+'''
 #1
 print "\nselect * from s_dept: ", [[i[0],i[1],i[2]] for i in s_dept[1::]]
 #2
@@ -58,3 +58,4 @@ for department in sorted({ d[9] for d in s_emp[1::] }): print (department, (lamb
 #8
 print "\nselect dept_id, avg(salary) from s_emp group by dept_id having avg(salary) < 1500: "
 for department in { d[9] for d in s_emp[1::] }: print (lambda deptId, avgSal: (deptId, avgSal) if avgSal < 1500 else '')(department, (lambda l: round(sum(l) / len(l), 2))(map(float,[ e[7] for e in s_emp[1::] if e[9] == department ])))
+'''
