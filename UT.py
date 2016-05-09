@@ -8,8 +8,8 @@ class teacher(object):
             'course': 'n/a',
             '$course': lambda x: data.update({'course':x}),
 
-            'military time': 0000,
-            '$military time': lambda x: data.update({'military time': x}),
+            'time': '8:00',
+            '$time': lambda x: data.update({'time': x}),
 
             'professor rating': 0,
             '$professor rating': lambda x: data.update({'professor rating':x}),
@@ -25,6 +25,21 @@ class teacher(object):
                 return None
         return cf
 
+    run = f(1)
+
+class substitute(teacher):
+
+    def f(self):
+        data = {
+            'name': 'substitute',
+            '$name': lambda x: data.update({'name': x})
+        }
+        def cf(self, d):
+            if d in data:
+                return data[d]
+            else:
+                return super(substitute, self).run(d)
+        return cf
     run = f(1)
 
 

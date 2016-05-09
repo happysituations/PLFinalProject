@@ -13,9 +13,10 @@ class MiniLisp(cmd.Cmd):     # See https://docs.python.org/2/library/cmd.html
         self.prompt = "ml> "
         self.intro  = "Bienvenido a MiniLisp"
 
-    def p_initial(self, args):
-        from UT import teacher
-        tea = teacher()
+    def p_set(self,args):
+        toReturn = tea.run('')(args);
+        return toReturn
+
 
     def do_exit(self, args):
         """Exits from the console"""
