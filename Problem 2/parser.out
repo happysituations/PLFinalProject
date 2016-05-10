@@ -619,22 +619,4 @@ WARNING: shift/reduce conflict for QUOTE in state 16 resolved as shift
 WARNING: shift/reduce conflict for LPAREN in state 16 resolved as shift
 WARNING: shift/reduce conflict for TRUE in state 16 resolved as shift
 WARNING: shift/reduce conflict for FALSE in state 16 resolved as shift
-WARNING: shift/reduce conflict for SIMB in state 17 resolved as shift
-WARNING: shift/reduce conflict for NUM in state 17 resolved as shift
-WARNING: shift/reduce conflict for TEXT in state 17 resolved as shift
-WARNING: shift/reduce conflict for SIMB in state 17 resolved as shift
-WARNING: shift/reduce conflict for NUM in state 17 resolved as shift
-WARNING: shift/reduce conflict for TEXT in state 17 resolved as shift
-WARNING: shift/reduce conflict for NIL in state 17 resolved as shift
-WARNING: shift/reduce conflict for QUOTE in state 17 resolved as shift
-WARNING: shift/reduce conflict for LPAREN in state 17 resolved as shift
-WARNING: shift/reduce conflict for TRUE in state 17 resolved as shift
-WARNING: shift/reduce conflict for FALSE in state 17 resolved as shift
-WARNING: reduce/reduce conflict in state 14 resolved using rule (empty -> <empty>)
-WARNING: rejected rule (atom -> <empty>) in state 14
-WARNING: reduce/reduce conflict in state 16 resolved using rule (empty -> <empty>)
-WARNING: rejected rule (atom -> <empty>) in state 16
-WARNING: reduce/reduce conflict in state 17 resolved using rule (empty -> <empty>)
-WARNING: rejected rule (atom -> <empty>) in state 17
-WARNING: reduce/reduce conflict in state 19 resolved using rule (items -> empty)
-WARNING: rejected rule (item -> empty) in state 19
+WARNING: shift/reduce conflict for SIMB in state 17 reso
