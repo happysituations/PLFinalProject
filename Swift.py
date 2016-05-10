@@ -21,7 +21,8 @@ reserved = {
     'STRING' : 'string',
     'RETURN' : 'return',
     'TRUE'   : 'TRUE',
-    'FALSE'  : 'FALSE'
+    'FALSE'  : 'FALSE',
+    'FUNC'   : 'func'
 }
 
 # List of token names.
@@ -29,7 +30,7 @@ tokens = [
              'AND_OP', 'OR_OP', 'LPAREN', 'RPAREN', 'LBRACE', 'RBRACE', 'LCURLY', 'RCURLY', \
              'SEMI', 'EQ_OP', 'NE_OP', 'LE_OP', 'GE_OP', 'ELEM', 'PIPE', 'EQUALS', \
              'LT_OP', 'GT_OP', 'PLUS', 'MINUS', 'MULT', 'DIV', 'PRCNT', 'BANG', \
-             'COMMA', 'SQUOTE', 'LAMBDA', 'MAP_TO', \
+             'COMMA', 'SQUOTE', 'LAMBDA', 'MAP_TO', 'DQUOTE', 'COLON', 'BACKSLASH'\
              #'DOT', \
              'INTEGER', 'IDENTIFIER', 'CLFLOAT', 'CLSTRING' \
              ] + list(reserved.keys())
@@ -69,6 +70,9 @@ t_SQUOTE = r"'"
 #t_DOT    = r'.'
 t_LAMBDA = r'\(\\'
 t_MAP_TO = r'->'
+t_DQUOTE = r'"'
+t_COLON = r':'
+t_BACKSLASH = r'\\'
 
 def t_INTEGER(t):
     r'\d+'
@@ -147,7 +151,8 @@ def p_type(p):
             | LIST
             | TUPLE
             | OBJECT
-            | STRING'''
+            | STRING
+            | FUNC'''
 
 def p_statements(p):
     '''statements : statement
