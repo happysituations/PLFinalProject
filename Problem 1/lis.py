@@ -71,7 +71,7 @@ def standard_env():
         'map+':     lambda x,y : [num+y for num in x],
         'map*':     lambda x,y : [num*y for num in x],
         'map-':     lambda x,y : [num-y for num in x],
-        'map/':     lambda x,y : [num/y for num in x],
+        'mapdiv':     lambda x,y : [num/y for num in x],
         'max':     max,
         'min':     min,
         'not':     op.not_,
