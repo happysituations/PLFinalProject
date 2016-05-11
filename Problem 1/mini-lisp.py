@@ -53,4 +53,8 @@ if __name__ == '__main__':
 (exec 'from UT import substitute; sub = substitute (); toReturn = sub.run("name")')
 (exec 'from UT import substitute; sub = substitute (); toReturn = sub.run("$name")(“   ”)')
 (exec 'from UT import teacher; tea = teacher(); toReturn = tea.run("course")')
+
+
+Python: (exec 'from emp_cust import s_dept; toReturn = [[i[0],i[1],i[2]] for i in s_dept[1::]]')
+Java: (exec 'import ListComprehension; ListComprehension.streamOps()')
 '''
