@@ -2,28 +2,6 @@
 # HMM tokenizer
 # ------------------------------------------------------------
 
-import ply.lex as lex
-
-# Reserved words
-reserved = {
-    'IF'     : 'if',
-    'IFF'    : 'iff',
-    'ELSE'   : 'else',
-    'WHILE'  : 'while',
-    'FOR'    : 'for',
-    'INT'    : 'int',
-    'FLOAT'  : 'float',
-    'BOOL'   : 'bool',
-    'VOID'   : 'void',
-    'LIST'   : 'list',
-    'TUPLE'  : 'tuple',
-    'OBJECT' : 'object',
-    'STRING' : 'string',
-    'RETURN' : 'return',
-    'TRUE'   : 'TRUE',
-    'FALSE'  : 'FALSE',
-    'FUNC'   : 'func'
-}
 
 # List of token names.
 tokens = [
@@ -37,42 +15,8 @@ tokens = [
 
 # Regular expression rules for simple tokens
 
-def t_CLFLOAT(t):
-    r'[0-9]+[\.][0-9]*'
-    return t
 
-t_AND_OP = r'&&'
-t_OR_OP  = r'\|\|'
-t_LPAREN = r'\('
-t_RPAREN = r'\)'
-t_LBRACE = r'\['
-t_RBRACE = r']'
-t_LCURLY = r'{'
-t_RCURLY = r'}'
-t_SEMI   = r';'
-t_EQ_OP  = r'=='
-t_NE_OP  = r'!='
-t_LE_OP  = r'<='
-t_GE_OP  = r'>='
-t_ELEM   = r'<-'
-t_PIPE   = r'\|'
-t_EQUALS = r'='
-t_LT_OP  = r'<'
-t_GT_OP  = r'>'
-t_MINUS  = r'-'
-t_PLUS   = r'\+'
-t_MULT   = r'\*'
-t_DIV    = r'/'
-t_PRCNT  = r'%'
-t_BANG   = r'!'
-t_COMMA  = r','
-t_SQUOTE = r"'"
-#t_DOT    = r'.'
-t_LAMBDA = r'\(\\'
-t_MAP_TO = r'->'
-t_DQUOTE = r'"'
-t_COLON = r':'
-t_BACKSLASH = r'\\'
+
 
 def t_INTEGER(t):
     r'\d+'

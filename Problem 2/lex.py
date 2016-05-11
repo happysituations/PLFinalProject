@@ -13,6 +13,7 @@ tokens = ('QUOTE', 'SIMB', 'NUM', 'LPAREN', 'RPAREN', \
 # Reserved words
 reserved = {
     'nil' : 'NIL',
+    
 }
 
 # Regular expression rules for simple tokens
