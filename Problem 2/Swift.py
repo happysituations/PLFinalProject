@@ -2,21 +2,73 @@
 # HMM tokenizer
 # ------------------------------------------------------------
 
+import ply.lex as lex
+
+# Reserved words
+reserved = {
+    'IF'     : 'if',
+    'IFF'    : 'iff',
+    'ELSE'   : 'else',
+    'WHILE'  : 'while',
+    'FOR'    : 'for',
+    'INT'    : 'int',
+    'FLOAT'  : 'float',
+    'BOOL'   : 'bool',
+    'VOID'   : 'void',
+    'LIST'   : 'list',
+    'TUPLE'  : 'tuple',
+    'OBJECT' : 'object',
+    'STRING' : 'string',
+    'RETURN' : 'return',
+    'TRUE'   : 'TRUE',
+    'FALSE'  : 'FALSE'
+}
 
 # List of token names.
 tokens = [
              'AND_OP', 'OR_OP', 'LPAREN', 'RPAREN', 'LBRACE', 'RBRACE', 'LCURLY', 'RCURLY', \
              'SEMI', 'EQ_OP', 'NE_OP', 'LE_OP', 'GE_OP', 'ELEM', 'PIPE', 'EQUALS', \
              'LT_OP', 'GT_OP', 'PLUS', 'MINUS', 'MULT', 'DIV', 'PRCNT', 'BANG', \
-             'COMMA', 'SQUOTE', 'LAMBDA', 'MAP_TO', 'DQUOTE', 'COLON', 'BACKSLASH'\
+             'COMMA', 'SQUOTE', 'LAMBDA', 'MAP_TO', \
              #'DOT', \
              'INTEGER', 'IDENTIFIER', 'CLFLOAT', 'CLSTRING' \
              ] + list(reserved.keys())
 
 # Regular expression rules for simple tokens
 
+def t_CLFLOAT(t):
+    r'[0-9]+[\.][0-9]*'
+    return t
 
-
+t_AND_OP = r'&&'
+t_OR_OP  = r'\|\|'
+t_LPAREN = r'\('
+t_RPAREN = r'\)'
+t_LBRACE = r'\['
+t_RBRACE = r']'
+t_LCURLY = r'{'
+t_RCURLY = r'}'
+t_SEMI   = r';'
+t_EQ_OP  = r'=='
+t_NE_OP  = r'!='
+t_LE_OP  = r'<='
+t_GE_OP  = r'>='
+t_ELEM   = r'<-'
+t_PIPE   = r'\|'
+t_EQUALS = r'='
+t_LT_OP  = r'<'
+t_GT_OP  = r'>'
+t_MINUS  = r'-'
+t_PLUS   = r'\+'
+t_MULT   = r'\*'
+t_DIV    = r'/'
+t_PRCNT  = r'%'
+t_BANG   = r'!'
+t_COMMA  = r','
+t_SQUOTE = r"'"
+#t_DOT    = r'.'
+t_LAMBDA = r'\(\\'
+t_MAP_TO = r'->'
 
 def t_INTEGER(t):
     r'\d+'
@@ -95,8 +147,7 @@ def p_type(p):
             | LIST
             | TUPLE
             | OBJECT
-            | STRING
-            | FUNC'''
+            | STRING'''
 
 def p_statements(p):
     '''statements : statement
@@ -156,6 +207,8 @@ def p_addition(p):
                 | term addOP addition'''
     from java.lang import Math
     import Addition
+    import Prime
+    print Prime.a
     if len(p) == 4 and isinstance( p[1], int ) and isinstance( p[3], int ):
         print "Calling java Math: ", Math.max(p[1], p[3])
         print "Calling java Addition.add: ", Addition.add(p[1], p[3])
@@ -217,6 +270,6 @@ def p_error(p):
 import ply.yacc as yacc
 yacc.yacc()
 
-with open('swiftCode.txt', 'r') as content_file:
+with open('testfile.c', 'r') as content_file:
     content = content_file.read()
 yacc.parse(content)
