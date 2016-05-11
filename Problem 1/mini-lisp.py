@@ -47,3 +47,10 @@ class MiniLisp(cmd.Cmd):     # See https://docs.python.org/2/library/cmd.html
 if __name__ == '__main__':
         ml = MiniLisp()
         ml.cmdloop()     # See https://docs.python.org/2/library/cmd.html
+
+'''(exec 'from UT import teacher; tea = teacher(); toReturn = tea.run("name")')
+(exec 'from UT import teacher; tea = teacher(); toReturn = tea.run("$name")(“Cannata”)')
+(exec 'from UT import substitute; sub = substitute (); toReturn = sub.run("name")')
+(exec 'from UT import substitute; sub = substitute (); toReturn = sub.run("$name")(“   ”)')
+(exec 'from UT import teacher; tea = teacher(); toReturn = tea.run("course")')
+'''
