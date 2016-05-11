@@ -53,14 +53,7 @@ def standard_env():
     env.update(vars(math)) # sin, cos, sqrt, pi, ...
     env.update({
         '+':op.add, '-':op.sub, '*':op.mul, '/':op.div, 
-        '>':op.gt, '<':op.lt, '>=':op.ge, '<=':op.le, '=':op.eq, 
-        'abs':     abs,
-        'append':  op.add,  
-        'apply':   apply,
-        'begin':   lambda *x: x[-1],
-        'first':     lambda x: x[0],
-        'cdr':     lambda x: x[1:], 
-        'cons':    lambda x,y: [x] + y,
+        '>':op.gt, '<':op.lt, '>=':op.ge, '<=':op.le, '=':op.eq,
         'eq?':     op.is_, 
         'equal?':  op.eq, 
         'length':  len,
