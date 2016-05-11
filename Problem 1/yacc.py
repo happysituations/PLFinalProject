@@ -12,6 +12,40 @@ name = {}
 global ast
 ast = []
 
+def cons(l):
+    return [l[0]] + l[1]
+name['cons'] = cons
+
+def multiply(l):
+    flag = True
+    for i in l:
+        if not isinstance(i, int):
+            flag = False
+            return cons * l
+    if flag == True:
+        product = l[0]
+        if len(l) > 1:
+            for i in l[1:]:
+                product = product * i
+        return product
+
+name['*'] = multiply
+name['multiply'] = multiply
+
+def divide(l):
+    if len(l) == 1:
+        return l[0]
+    if len(l) > 1:
+        quotient = l[0]
+        for i in l[1:]:
+            if i == 0:
+                return "undefined"
+            quotient = quotient / i
+    return quotient
+
+name['/'] = divide
+name['divide'] = divide
+
 def eq(l):
     return l[0] == l[1]
 
